@@ -1,0 +1,29 @@
+#!/sbin/runscript
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+RAMDRIVE="i-RAM"
+
+start() {
+    ebegin "Preparing i-RAM drive"
+
+    for i in /dev/sd[a-z]; do
+        data=`hdparm -i $i 2> /dev/null | grep "Model"`
+        if [[ "$data" =~ "$RAMDRIVE" ]]; then
+            if [ ! -b ${i}1 ]; then
+                parted -s ${i} mklabel pc98
+                parted -s ${i} mkpart primary linux-swap 0% 100%
+            fi
+            mkswap -f ${i}1 &> /dev/null
+        fi
+    done
+ 
+    return 0
+}
+
+stop() {
+    return 0
+}
+
+# vim:ts=4
+
