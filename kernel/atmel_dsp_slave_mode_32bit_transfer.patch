@@ -1,0 +1,67 @@
+--- linux-3.7.9/sound/soc/atmel/atmel_ssc_dai.c.orig	2013-03-21 00:28:59.000000000 +0100
++++ linux-3.7.9/sound/soc/atmel/atmel_ssc_dai.c	2013-03-21 00:40:23.235588639 +0100
+@@ -380,7 +380,14 @@ static int atmel_ssc_hw_params(struct sn
+ 		break;
+ 	case SNDRV_PCM_FORMAT_S16_LE:
+ 		bits = 16;
+-		dma_params->pdc_xfer_size = 2;
++#if defined(CONFIG_ARCH_AT91SAM9261)
++		if ((ssc_p->daifmt
++		& (SND_SOC_DAIFMT_FORMAT_MASK | SND_SOC_DAIFMT_MASTER_MASK)) ==
++		(SND_SOC_DAIFMT_DSP_A | SND_SOC_DAIFMT_CBM_CFM))
++			dma_params->pdc_xfer_size = 4;
++		else
++#endif
++			dma_params->pdc_xfer_size = 2;
+ 		break;
+ 	case SNDRV_PCM_FORMAT_S24_LE:
+ 		bits = 24;
+@@ -561,6 +568,15 @@ static int atmel_ssc_hw_params(struct sn
+ 			| SSC_BF(RCMR_CKO, SSC_CKO_NONE)
+ 			| SSC_BF(RCMR_CKS, SSC_CKS_PIN);
+ 
++#if defined(CONFIG_ARCH_AT91SAM9261)
++		rfmr =	  SSC_BF(RFMR_FSEDGE, SSC_FSEDGE_POSITIVE)
++			| SSC_BF(RFMR_FSOS, SSC_FSOS_NONE)
++			| SSC_BF(RFMR_FSLEN, 0)
++			| SSC_BF(RFMR_DATNB, 0)
++			| SSC_BIT(RFMR_MSBF)
++			| SSC_BF(RFMR_LOOP, 0)
++			| SSC_BF(RFMR_DATLEN, 31);
++#else
+ 		rfmr =	  SSC_BF(RFMR_FSEDGE, SSC_FSEDGE_POSITIVE)
+ 			| SSC_BF(RFMR_FSOS, SSC_FSOS_NONE)
+ 			| SSC_BF(RFMR_FSLEN, 0)
+@@ -568,6 +584,7 @@ static int atmel_ssc_hw_params(struct sn
+ 			| SSC_BIT(RFMR_MSBF)
+ 			| SSC_BF(RFMR_LOOP, 0)
+ 			| SSC_BF(RFMR_DATLEN, (bits - 1));
++#endif
+ 
+ 		tcmr =	  SSC_BF(TCMR_PERIOD, 0)
+ 			| SSC_BF(TCMR_STTDLY, START_DELAY)
+@@ -576,6 +593,16 @@ static int atmel_ssc_hw_params(struct sn
+ 			| SSC_BF(TCMR_CKO, SSC_CKO_NONE)
+ 			| SSC_BF(TCMR_CKS, SSC_CKS_PIN);
+ 
++#if defined(CONFIG_ARCH_AT91SAM9261)
++		tfmr =	  SSC_BF(TFMR_FSEDGE, SSC_FSEDGE_POSITIVE)
++			| SSC_BF(TFMR_FSDEN, 0)
++			| SSC_BF(TFMR_FSOS, SSC_FSOS_NONE)
++			| SSC_BF(TFMR_FSLEN, 0)
++			| SSC_BF(TFMR_DATNB, 0)
++			| SSC_BIT(TFMR_MSBF)
++			| SSC_BF(TFMR_DATDEF, 0)
++			| SSC_BF(TFMR_DATLEN, 31);
++#else
+ 		tfmr =	  SSC_BF(TFMR_FSEDGE, SSC_FSEDGE_POSITIVE)
+ 			| SSC_BF(TFMR_FSDEN, 0)
+ 			| SSC_BF(TFMR_FSOS, SSC_FSOS_NONE)
+@@ -584,6 +611,7 @@ static int atmel_ssc_hw_params(struct sn
+ 			| SSC_BIT(TFMR_MSBF)
+ 			| SSC_BF(TFMR_DATDEF, 0)
+ 			| SSC_BF(TFMR_DATLEN, (bits - 1));
++#endif
+ 		break;
+ 
+ 	default:
