@@ -1,0 +1,4 @@
+# load vizzini usb/serial module when device plugged in
+ATTRS{idVendor}=="04e2", MODE="666"
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="04e2", ATTRS{idProduct}=="1410", RUN+="/sbin/modprobe -b vizzini"
+
