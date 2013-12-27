@@ -1,0 +1,5 @@
+# Create "/dev" entries for Digilent device's with read and write
+# permission granted to all users.
+ATTRS{idVendor}=="1443", MODE="666"
+ACTION=="add", ATTRS{idVendor}=="0403", ATTRS{manufacturer}=="Digilent", MODE="666", RUN+="/usr/local/sbin/dftdrvdtch %s{busnum} %s{devnum}"
+
