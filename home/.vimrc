@@ -28,7 +28,7 @@ set expandtab
 " don't make it look like there are line breaks where there aren't
 set nowrap
 
-" enable aduto indentation
+" enable auto indentation
 set autoindent
 
 " set incremental (as U type) search
@@ -56,7 +56,7 @@ filetype on
 " set maximum text width to 80
 "set textwidth=80
 
-" dont expand tabs for python files
+" don't expand tabs for make files
 autocmd FileType make set noexpandtab
 
 " enable backspace
@@ -72,7 +72,7 @@ set ruler
 set hlsearch
 
 " set autodirectory
-set autochdir
+"set autochdir
 
 " enable spell check
 " set spell
@@ -80,8 +80,14 @@ set autochdir
 " utf8 encoding
 set encoding=utf-8
 
-" alwasy show status line
+" always show status line
 set laststatus=2
+
+" highlight cursor line number
+set cursorline
+highlight CursorLine   cterm=none ctermbg=black
+highlight CursorLineNr cterm=none ctermbg=black ctermfg=blue
+
 " buftabs settings
 let g:buftabs_only_basename=1
 
@@ -94,7 +100,7 @@ let Tlist_Use_Right_Window=1
 " let Tlist_Auto_Open=1
 let Tlist_Show_One_File = 1
 
-" buffer movement keymappings
+" buffer movement key mappings
 nnoremap <silent> <F2> :bp<CR>
 nnoremap <silent> <F3> :bn<CR>
 nnoremap <F4> :set invpaste paste?<CR>
@@ -114,6 +120,6 @@ nnoremap <silent> <S-F12> :TlistToggle<CR>
 " change autocomplete list color
 highlight Pmenu ctermfg=1 ctermbg=4 guibg=grey30
 
-"cuda highlight
+"CUDA highlight
 au BufNewFile,BufRead *.cu set ft=cpp
 au BufNewFile,BufRead *.cuh set ft=cpp
