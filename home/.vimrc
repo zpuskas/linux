@@ -123,3 +123,5 @@ highlight Pmenu ctermfg=1 ctermbg=4 guibg=grey30
 "CUDA highlight
 au BufNewFile,BufRead *.cu set ft=cpp
 au BufNewFile,BufRead *.cuh set ft=cpp
+
+autocmd FileType c,cpp,java,python autocmd BufWritePre <buffer> :%s/\s\+$//e
