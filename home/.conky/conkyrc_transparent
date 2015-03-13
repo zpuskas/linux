@@ -31,6 +31,9 @@ override_utf8_locale no
 uppercase yes # set to yes if you want all text to be in uppercase
 
 TEXT
+
+Datetime: ${time %Y.%m.%d %H:%M}
+
 Energy : ${alignr}${battery_percent BAT0}%
 ${battery_bar 4 BAT0}
 Remaining time: ${alignr}${battery_time}
