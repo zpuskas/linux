@@ -16,6 +16,15 @@ function prompt-show-status ()
   return 0
 }
 
+# function to quickly back up files
+bak() {
+    [[ $# < 1 ]] && exit 0
+    while [[ $# > 0 ]] ; do
+        cp "${1}" "${1}~"
+        shift
+    done
+}
+
 # Easy detailed listing
 alias ll='ls -la'
 
