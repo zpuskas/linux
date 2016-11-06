@@ -1,0 +1,17 @@
+#!/bin/sh
+# (c) 2016, GPLv3
+#
+# Traverse the current directory and create a CONTENTS file
+# and a sha512 DIGEST file for the contents.
+
+if [[ -f CONTENTS ]]; then
+    echo "CONTENTS file exists, will not overwrite"
+    exit 1
+elif [[ -f DIGEST ]]; then
+    echo "DIGEST file exists, will not overwrite"
+    exit 1
+fi
+
+pwd > CONTENTS
+tree -pugsfi . >> CONTENTS
+find . -type f 2>/dev/null | grep -v DIGEST | xargs -IFILE -n1 sha512sum "FILE" >> DIGEST
