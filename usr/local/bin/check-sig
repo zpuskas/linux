@@ -1,0 +1,14 @@
+#!/bin/bash
+# License: MIT
+# Source: http://stackoverflow.com/questions/19011093/how-do-i-verify-a-gpg-signature-matches-a-public-key-file
+
+set -e
+
+keyfile=$(mktemp --suffix=.gpg)
+function cleanup {
+    rm "$keyfile"
+}
+trap cleanup EXIT
+
+gpg --yes -o "$keyfile" --dearmor "$1"
+gpg --status-fd 1 --no-default-keyring --keyring "$keyfile" --trust-model always --verify "$2" 2>/dev/null
