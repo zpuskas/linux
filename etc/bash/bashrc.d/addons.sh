@@ -27,9 +27,13 @@ bak() {
 
 # Add KDE trashing functionality onto the CLI
 function trash {
-    for f in $@; do
-        kioclient move "$f" "trash:/"
-    done
+    if [[ $XDG_CURRENT_DESKTOP == 'KDE' ]]; then
+        for f in $@; do
+            kioclient move "$f" "trash:/"
+        done
+    else
+        echo "You are not in KDE, trash won't work"
+    fi
 }
 alias trash="trash"
 
