@@ -25,6 +25,14 @@ bak() {
     done
 }
 
+# Add KDE trashing functionality onto the CLI
+function trash {
+    for f in $@; do
+        kioclient move "$f" "trash:/"
+    done
+}
+alias trash="trash"
+
 # Easy detailed listing
 alias ll='ls -la'
 
