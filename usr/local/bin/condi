@@ -4,6 +4,14 @@
 # Traverse the current directory and create a CONTENTS file
 # and a sha512 DIGEST file for the contents.
 
+DIR="."
+
+if [[ $# -lt 2 ]]; then
+    echo "No directory specified, assuming current directory"
+else
+    DIR=$2
+fi
+
 if [[ -f CONTENTS ]]; then
     echo "CONTENTS file exists, will not overwrite"
     exit 1
