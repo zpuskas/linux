@@ -1,0 +1,76 @@
+#!/bin/sh
+# (c) 2017, Zoltan Puskas
+# License: BSD 3-clause
+
+OPTIND=1
+
+# default location of the raw directory, can be changed by the -r option
+RAWDIR="raw"
+SHORT=d:trh
+
+# process command line arguments
+args=`getopt $SHORT "$@"`
+
+function print_help {
+    echo "Clean up RAW files that have not corresponding JPG file in current directory"
+    echo "Usage: $0 [-d] [-t] [-r]"
+    echo
+    echo "-r : directory to look for correspinding raw files for JPG (default: raw)"
+    echo "-t : move files to KDE trash instead of just printing to stdout"
+    echo "-d : delete files instead of just printing to stdout"
+}
+
+if [[ $? -ne 0 ]]; then
+    exit 2
+fi 
+
+set -- $args
+
+while true; do
+    case "$1" in
+        -d)
+            d=y
+            shift
+            ;;
+        -t)
+            t=y
+            shift
+            ;;
+        -r)
+            RAWDIR="$2"
+            shift 2
+            ;;
+        -h)
+            print_help
+            exit 0
+            ;;
+        --)
+            shift
+            break
+            ;;
+        *)
+            echo "Huh?"
+            exit 2
+            ;;
+    esac
+done
+
+# Check for if raw directory really exists
+if [ ! -d "$RAWDIR" ]; then
+    echo "No \"${RAWDIR}\" directory found"
+    exit 1
+fi
+
+# Compare files and print raw files without JPG or delete them if -f specified
+pushd $RAWDIR > /dev/null 2>&1
+for img in IMGP*; do
+    filename="${img%.*}"
+    if [ ! -f "../${filename}.JPG" ]; then
+        printf "No corrensponding JPG for ${img}"
+        [[ $t == "y" ]] && kioclient move "${img}" "trash:/" && printf " - trashed"
+        [[ $d == "y" ]] && rm "${img}" && printf " - deleted"
+        printf "\n"
+    fi
+done
+
+popd > /dev/null 2>&1
