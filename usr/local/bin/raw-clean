@@ -63,7 +63,7 @@ fi
 
 # Compare files and print raw files without JPG or delete them if -f specified
 pushd $RAWDIR > /dev/null 2>&1
-for img in IMGP*; do
+for img in IMGR*; do
     filename="${img%.*}"
     if [ ! -f "../${filename}.JPG" ]; then
         printf "No corrensponding JPG for ${img}"
