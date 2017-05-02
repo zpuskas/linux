@@ -1,0 +1,5 @@
+# Make hidraw devices created for Yubikey available for plugdev group members
+# Install app-crypt/ccid, sys-apps/pcsc-lite, enable pcscd during init. Optionally
+# also get app-crypt/yubikey-neo-manager. For Firefox add u2f extension.
+ATTRS{idVendor}=="1050", GROUP="plugdev", MODE="0660"
+ATTRS{idVendor}=="2581", ATTRS{idProduct}=="f1d0", GROUP="plugdev", MODE="0660"
