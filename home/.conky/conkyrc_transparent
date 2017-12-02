@@ -23,7 +23,7 @@ conky.config = {
     default_outline_color = 'green',
     gap_x = 15,
     gap_y = 40,
-    alignment = 'br',
+    alignment = 'bl',
     no_buffers = true,
     uppercase = false,
     cpu_avg_samples = 2,
@@ -32,12 +32,11 @@ conky.config = {
 }
 
 conky.text = [[
-
 Datetime: ${time %Y.%m.%d %H:%M}
 
-Energy : ${alignr}${battery_percent BAT0}%
+Energy: ${alignr}${battery_percent BAT0}%
 ${battery_bar 4 BAT0}
-Remaining time: ${alignr}${battery_time}
+Remaining time: ${alignr}${if_empty ${battery_time}}AC ${acpiacadapter}${else}${battery_time}${endif}
 Uptime: $alignr$uptime
 Sytem temp: ${alignr}${acpitemp}${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
 CPU temp: ${alignr}${hwmon 2 temp 1}${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
@@ -73,6 +72,8 @@ ${top_mem name 4}$alignr${top_mem cpu 4}${top_mem mem 4}
 
 SSD: ${alignr}${fs_used /} / ${fs_size /}
 ${fs_bar 4 /}
+IO-R: ${diskio_read /dev/sda} ${alignr}IO-W: ${diskio_write}
+${diskiograph_read /dev/sda 15,107} ${alignr}${diskiograph_write /dev/sda 15,107}
 TMP: ${alignr}${fs_used /tmp} / ${fs_size /tmp}
 ${fs_bar 4 /tmp}
 
