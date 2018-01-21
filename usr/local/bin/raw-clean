@@ -67,7 +67,7 @@ for img in IMGR*; do
     filename="${img%.*}"
     if [ ! -f "../${filename}.JPG" ]; then
         printf "No corrensponding JPG for ${img}"
-        [[ $t == "y" ]] && kioclient move "${img}" "trash:/" && printf " - trashed"
+        [[ $t == "y" ]] && kioclient5 move "${img}" "trash:/" && printf " - trashed"
         [[ $d == "y" ]] && rm "${img}" && printf " - deleted"
         printf "\n"
     fi
