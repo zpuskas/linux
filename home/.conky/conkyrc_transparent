@@ -37,8 +37,10 @@ conky.config = {
 conky.text = [[
 Datetime: ${time %Y.%m.%d %H:%M}
 
-Energy: ${alignr}${battery_percent BAT0}%
-${battery_bar 4 BAT0}
+Energy: ${alignr}${battery_percent all}%
+Battery
+${battery_percent BAT0}% ${alignr} ${battery_percent BAT1}%
+${battery_bar 4,107 BAT0} ${alignr}${battery_bar 4,107 BAT1}
 Remaining time: ${alignr}${if_empty ${battery_time}}AC ${acpiacadapter}${else}${battery_time}${endif}
 Uptime: $alignr$uptime
 Sytem temp: ${alignr}${acpitemp}${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
@@ -47,14 +49,15 @@ CPU temp: ${alignr}${hwmon 2 temp 1}${iconv_start UTF-8 ISO_8859-1}°${iconv_sto
 Processes: ${alignr}$processes ($running_processes running)
 Load: ${alignr}$loadavg
 
-Core0@${freq 1} MHz ${alignr}${cpu cpu1}%
-${cpubar cpu1 4 }
-Core1@${freq 2} MHz ${alignr}${cpu cpu2}%
-${cpubar cpu2 4 }
-Core2@${freq 3} MHz ${alignr}${cpu cpu3}%
-${cpubar cpu2 4 }
-Core3@${freq 4} MHz ${alignr}${cpu cpu4}%
-${cpubar cpu4 4 }
+CPU
+${cpu cpu1}%@${freq 1} MHz ${alignr}${cpu cpu2}%@${freq 2} MHz 
+${cpubar cpu1 4,107} ${alignr}${cpubar cpu2 4,107}
+${cpu cpu3}%@${freq 3} MHz ${alignr}${cpu cpu4}%@${freq 4} MHz 
+${cpubar cpu3 4,107} ${alignr}${cpubar cpu4 4,107}
+${cpu cpu5}%@${freq 5} MHz ${alignr}${cpu cpu6}%@${freq 6} MHz 
+${cpubar cpu5 4,107} ${alignr}${cpubar cpu6 4,107}
+${cpu cpu7}%@${freq 7} MHz ${alignr}${cpu cpu8}%@${freq 8} MHz 
+${cpubar cpu7 4,107} ${alignr}${cpubar cpu8 4,107}
 
 Ram ${alignr}$mem / $memmax ($memperc%)
 ${membar 4}
@@ -75,19 +78,24 @@ ${top_mem name 4}$alignr${top_mem cpu 4}${top_mem mem 4}
 
 SSD: ${alignr}${fs_used /} / ${fs_size /}
 ${fs_bar 4 /}
-IO-R: ${diskio_read /dev/sda} ${alignr}IO-W: ${diskio_write}
-${diskiograph_read /dev/sda 15,107} ${alignr}${diskiograph_write /dev/sda 15,107}
+IO-R: ${diskio_read /dev/nvme0n1} ${alignr}IO-W: ${diskio_write}
+${diskiograph_read /dev/nvme0n1 15,107} ${alignr}${diskiograph_write /dev/nvme0n1 15,107}
 TMP: ${alignr}${fs_used /tmp} / ${fs_size /tmp}
 ${fs_bar 4 /tmp}
 
-Eth0: ${addr eth0}
-Down ${downspeed eth0}/s ${alignr}Up ${upspeed eth0}/s
-${downspeedgraph eth0 15,107} ${alignr}${upspeedgraph eth0 15,107}
-Total ${totaldown eth0} ${alignr}Total ${totalup eth0}
+enp0s31f6: ${addr enp0s31f6}
+Down ${downspeed enp0s31f6}/s ${alignr}Up ${upspeed enp0s31f6}/s
+${downspeedgraph enp0s31f6 15,107} ${alignr}${upspeedgraph enp0s31f6 15,107}
+Total ${totaldown enp0s31f6} ${alignr}Total ${totalup enp0s31f6}
 
-Wlan0: ${addr wlan0}
-Signal: ${alignr}${wireless_link_qual wlan0}%
-Down ${downspeed wlan0}/s ${alignr}Up ${upspeed wlan0}/s
-${downspeedgraph wlan0 15,107} ${alignr}${upspeedgraph wlan0 15,107}
-Total ${totaldown wlan0} ${alignr}Total ${totalup wlan0}
+enp11s0u1: ${addr enp11s0u1}
+Down ${downspeed enp11s0u1}/s ${alignr}Up ${upspeed enp11s0u1}/s
+${downspeedgraph enp11s0u1 15,107} ${alignr}${upspeedgraph enp11s0u1 15,107}
+Total ${totaldown enp11s0u1} ${alignr}Total ${totalup enp11s0u1}
+
+wlp3s0: ${addr wlp3s0}
+Signal: ${alignr}${wireless_link_qual wlp3s0}%
+Down ${downspeed wlp3s0}/s ${alignr}Up ${upspeed wlp3s0}/s
+${downspeedgraph wlp3s0 15,107} ${alignr}${upspeedgraph wlp3s0 15,107}
+Total ${totaldown wlp3s0} ${alignr}Total ${totalup wlp3s0}
 ]]
