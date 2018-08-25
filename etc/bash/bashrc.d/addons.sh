@@ -29,7 +29,7 @@ bak() {
 function trash {
     if [[ $XDG_CURRENT_DESKTOP == 'KDE' ]]; then
         for f in $@; do
-            kioclient move "$f" "trash:/"
+            kioclient5 move "$f" "trash:/"
         done
     else
         echo "You are not in KDE, trash won't work"
