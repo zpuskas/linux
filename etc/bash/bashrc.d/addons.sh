@@ -37,11 +37,34 @@ function trash {
 }
 alias trash="trash"
 
+# Set custom colored prompt including git information for regular users
+source /usr/share/git/git-prompt.sh
+
+if ${use_color} ; then
+    if [[ ${EUID} == 0 ]] ; then
+        PS1='\[\033[01;31m\]\h\[\033[01;34m\] \w \$\[\033[00m\] '
+    else
+        PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w $(__git_ps1 "(%s)") \$\[\033[00m\] '
+    fi
+
+    # Color basic commands
+    alias ls='ls --color=auto'
+    alias grep='grep --colour=auto'
+    alias egrep='egrep --colour=auto'
+    alias fgrep='fgrep --colour=auto'
+    # Color my diffs
+    alias diff=colordiff
+else
+    # show root@ when we don't have colors
+    if [[ ${EUID} == 0 ]] ; then
+        PS1='\u@\h \w \$ '
+    else
+        PS1='\u@\h \w $(__git_ps1 "(%s)") \$ '
+    fi
+fi
+
 # Easy detailed listing
 alias ll='ls -la'
-
-# Color my diffs
-alias diff=colordiff
 
 # Strip colors from output
 alias stripcolors='sed "s/\x1B\[\([0-9]\{1,2\}\(;[0-9]\{1,2\}\)\?\)\?[mGK]//g"'
@@ -56,4 +79,3 @@ alias .....="cd ../../../../"
 bind "^W":backward-delete-word
 bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
-
