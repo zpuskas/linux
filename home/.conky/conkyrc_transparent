@@ -82,20 +82,26 @@ IO-R: ${diskio_read /dev/nvme0n1} ${alignr}IO-W: ${diskio_write}
 ${diskiograph_read /dev/nvme0n1 15,107} ${alignr}${diskiograph_write /dev/nvme0n1 15,107}
 TMP: ${alignr}${fs_used /tmp} / ${fs_size /tmp}
 ${fs_bar 4 /tmp}
-
+${if_existing /sys/class/net/enp14s0u1/operstate up}
+enp0s31f6: ${addr enp14s0u1}
+Down ${downspeed enp14s0u1}/s ${alignr}Up ${upspeed enp14s0u1}/s
+${downspeedgraph enp14s0u1 15,107} ${alignr}${upspeedgraph enp14s0u1 15,107}
+Total ${totaldown enp14s0u1} ${alignr}Total ${totalup enp14s0u1}
+${endif}${if_existing /sys/class/net/enp0s31f6/operstate up}
 enp0s31f6: ${addr enp0s31f6}
 Down ${downspeed enp0s31f6}/s ${alignr}Up ${upspeed enp0s31f6}/s
 ${downspeedgraph enp0s31f6 15,107} ${alignr}${upspeedgraph enp0s31f6 15,107}
 Total ${totaldown enp0s31f6} ${alignr}Total ${totalup enp0s31f6}
-
+${endif}${if_existing /sys/class/net/enp11s0u1/operstate up}
 enp11s0u1: ${addr enp11s0u1}
 Down ${downspeed enp11s0u1}/s ${alignr}Up ${upspeed enp11s0u1}/s
 ${downspeedgraph enp11s0u1 15,107} ${alignr}${upspeedgraph enp11s0u1 15,107}
 Total ${totaldown enp11s0u1} ${alignr}Total ${totalup enp11s0u1}
-
+${endif}${if_existing /sys/class/net/wlp3s0/operstate up}
 wlp3s0: ${addr wlp3s0}
 Signal: ${alignr}${wireless_link_qual wlp3s0}%
 Down ${downspeed wlp3s0}/s ${alignr}Up ${upspeed wlp3s0}/s
 ${downspeedgraph wlp3s0 15,107} ${alignr}${upspeedgraph wlp3s0 15,107}
 Total ${totaldown wlp3s0} ${alignr}Total ${totalup wlp3s0}
+${endif}
 ]]
