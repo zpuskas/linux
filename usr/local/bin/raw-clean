@@ -1,76 +1,78 @@
-#!/bin/sh
+#!/usr/bin/env python
+#
 # (c) 2017, Zoltan Puskas
 # License: BSD 3-clause
 
-OPTIND=1
+import click
+import os
+import send2trash
+import sys
 
-# default location of the raw directory, can be changed by the -r option
-RAWDIR="raw"
-SHORT=d:trh
+COMP_IMAGE_EXT = ".JPG"
+RAW_IMAGE_EXT = ".DNG"
 
-# process command line arguments
-args=`getopt $SHORT "$@"`
 
-function print_help {
-    echo "Clean up RAW files that have not corresponding JPG file in current directory"
-    echo "Usage: $0 [-d] [-t] [-r]"
-    echo
-    echo "-r : directory to look for correspinding raw files for JPG (default: raw)"
-    echo "-t : move files to KDE trash instead of just printing to stdout"
-    echo "-d : delete files instead of just printing to stdout"
-}
+@click.command()
+@click.option("--delete", "-d",
+              is_flag=True,
+              help="Delete files instead of just printing to terminal")
+@click.option("--invert", "-i",
+              is_flag=True,
+              help="Invert logic and clean JPGs based on RAW files")
+@click.option("--raw-dir", "-r",
+              default="raw",
+              help="Directory to look for correspinding raw files for JPG")
+@click.option("--trash", "-t",
+              is_flag=True,
+              help="Move files to trash instead of printing to terminal")
+def raw_clean(delete, invert, raw_dir, trash):
+    """Clean up RAW files without matching JPG files in current directory"""
 
-if [[ $? -ne 0 ]]; then
-    exit 2
-fi 
+    # Basic user input check
+    if not os.path.exists(raw_dir):
+        print(f"No '{raw_dir}' directory found!")
+        sys.exit(1)
 
-set -- $args
+    # Get list of images in different formats
+    image_dir = os.getcwd()
+    raw_dir = os.path.abspath(raw_dir)
 
-while true; do
-    case "$1" in
-        -d)
-            d=y
-            shift
-            ;;
-        -t)
-            t=y
-            shift
-            ;;
-        -r)
-            RAWDIR="$2"
-            shift 2
-            ;;
-        -h)
-            print_help
-            exit 0
-            ;;
-        --)
-            shift
-            break
-            ;;
-        *)
-            echo "Huh?"
-            exit 2
-            ;;
-    esac
-done
+    jpgs = set(
+        [f.split('.')[0]
+         for f in os.listdir(image_dir) if f.endswith(COMP_IMAGE_EXT)]
+    )
+    raws = set(
+        [f.split('.')[0]
+         for f in os.listdir(raw_dir) if f.endswith(RAW_IMAGE_EXT)]
+    )
 
-# Check for if raw directory really exists
-if [ ! -d "$RAWDIR" ]; then
-    echo "No \"${RAWDIR}\" directory found"
-    exit 1
-fi
+    # Find missing pairs
+    paired = raws & jpgs
+    jpgs_without_raw = jpgs - paired
+    raws_without_jpg = raws - paired
 
-# Compare files and print raw files without JPG or delete them if -f specified
-pushd $RAWDIR > /dev/null 2>&1
-for img in IMGR*; do
-    filename="${img%.*}"
-    if [ ! -f "../${filename}.JPG" ]; then
-        printf "No corrensponding JPG for ${img}"
-        [[ $t == "y" ]] && kioclient5 move "${img}" "trash:/" && printf " - trashed"
-        [[ $d == "y" ]] && rm "${img}" && printf " - deleted"
-        printf "\n"
-    fi
-done
+    # Decide what set of files to process
+    if not invert:
+        images = raws_without_jpg
+        workdir = raw_dir
+        ext = RAW_IMAGE_EXT
+    else:
+        images = jpgs_without_raw
+        workdir = image_dir
+        ext = COMP_IMAGE_EXT
 
-popd > /dev/null 2>&1
+    # Process files
+    for image in images:
+        image_path = os.path.join(workdir, f"{image}{ext}")
+        if not trash and not delete:
+            print(f"No pair found for '{image_path}' ")
+        elif delete:
+            print(f"Deleting '{image_path}'...")
+            os.unlink(image_path)
+        elif trash:
+            print(f"Trashing '{image_path}'...")
+            send2trash.send2trash(image_path)
+
+
+if __name__ == "__main__":
+    raw_clean()
