@@ -16,11 +16,19 @@ autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
+# Input
 bindkey -v
+
+source /etc/zsh/$TERM
+
 bindkey '^R' history-incremental-search-backward
 bindkey '^S' history-incremental-search-forward
-bindkey '^[[A' up-line-or-beginning-search
-bindkey '^[[B' down-line-or-beginning-search
+[[ -n ${key[Up]} ]] && bindkey "${key[Up]}" up-line-or-beginning-search
+[[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-beginning-search
+[[ -n ${key[Home]} ]] && bindkey -a "${key[Home]}" beginning-of-line
+[[ -n ${key[End]} ]] && bindkey -a "${key[End]}" end-of-line
+[[ -n ${key[Delete]} ]] && bindkey -a "${key[Delete]}" delete-char
+[[ -n ${key[Insert]} ]] && bindkey -a "${key[Insert]}" vi-insert
 
 # Prompt
 autoload -Uz promptinit
