@@ -29,6 +29,12 @@ bindkey '^S' history-incremental-search-forward
 [[ -n ${key[End]} ]] && bindkey -a "${key[End]}" end-of-line
 [[ -n ${key[Delete]} ]] && bindkey -a "${key[Delete]}" delete-char
 [[ -n ${key[Insert]} ]] && bindkey -a "${key[Insert]}" vi-insert
+[[ -n ${key[Backspace]} ]] && bindkey -a "${key[Backspace]}" backward-delete-char
+[[ -n ${key[Home]} ]] && bindkey -v "${key[Home]}" beginning-of-line
+[[ -n ${key[End]} ]] && bindkey -v "${key[End]}" end-of-line
+[[ -n ${key[Delete]} ]] && bindkey -v "${key[Delete]}" delete-char
+[[ -n ${key[Insert]} ]] && bindkey -v "${key[Insert]}" vi-insert
+[[ -n ${key[Backspace]} ]] && bindkey -v "${key[Backspace]}" backward-delete-char
 
 # Prompt
 autoload -Uz promptinit
