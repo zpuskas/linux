@@ -78,11 +78,16 @@ ${top_mem name 4}$alignr${top_mem cpu 4}${top_mem mem 4}
 
 SSD: ${alignr}${fs_used /} / ${fs_size /}
 ${fs_bar 4 /}
-IO-R: ${diskio_read /dev/nvme0n1} ${alignr}IO-W: ${diskio_write}
-${diskiograph_read /dev/nvme0n1 15,107} ${alignr}${diskiograph_write /dev/nvme0n1 15,107}
+IO-R: ${diskio_read} ${alignr}IO-W: ${diskio_write}
+${diskiograph_read 15,107} ${alignr}${diskiograph_write 15,107}
 TMP: ${alignr}${fs_used /tmp} / ${fs_size /tmp}
 ${fs_bar 4 /tmp}
-${if_existing /sys/class/net/enp14s0u1/operstate up}
+${if_existing /sys/class/net/eth0/operstate up}
+enp0s31f6: ${addr eth0}
+Down ${downspeed eth0}/s ${alignr}Up ${upspeed eth0}/s
+${downspeedgraph eth0 15,107} ${alignr}${upspeedgraph eth0 15,107}
+Total ${totaldown eth0} ${alignr}Total ${totalup eth0}
+${endif}${if_existing /sys/class/net/enp14s0u1/operstate up}
 enp0s31f6: ${addr enp14s0u1}
 Down ${downspeed enp14s0u1}/s ${alignr}Up ${upspeed enp14s0u1}/s
 ${downspeedgraph enp14s0u1 15,107} ${alignr}${upspeedgraph enp14s0u1 15,107}
