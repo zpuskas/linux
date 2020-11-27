@@ -25,18 +25,6 @@ bak() {
     done
 }
 
-# Add KDE trashing functionality onto the CLI
-function trash {
-    if [[ $XDG_CURRENT_DESKTOP == 'KDE' ]]; then
-        for f in $@; do
-            kioclient5 move "$f" "trash:/"
-        done
-    else
-        echo "You are not in KDE, trash won't work"
-    fi
-}
-alias trash="trash"
-
 # Set custom colored prompt including git information for regular users
 source /usr/share/git/git-prompt.sh
 
