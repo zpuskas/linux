@@ -1,0 +1,373 @@
+# Source: https://hu.wikipedia.org/wiki/Magyar_n%C3%A9vnapok_list%C3%A1ja_d%C3%A1tum_szerint
+
+REM Jan 01 MSG Névnapok: Alpár, Fruzsina, Bazil
+REM Jan 02 MSG Névnapok: Ábel, Gergely, Vazul
+REM Jan 03 MSG Névnapok: Genovéva, Gyöngyvér, Benjámin, Dzsenifer, Jennifer
+REM Jan 04 MSG Névnapok: Titusz, Leona, Angéla
+REM Jan 05 MSG Névnapok: Simon, Emília
+REM Jan 06 MSG Névnapok: Gáspár, Menyhért, Boldizsár
+REM Jan 07 MSG Névnapok: Attila, Etele, Ramóna, Rajmund, Bálint
+REM Jan 08 MSG Névnapok: Gyöngyvér, Keve, Szeverin, Szörény
+REM Jan 09 MSG Névnapok: Marcell, Juliánusz,
+REM Jan 10 MSG Névnapok: Melánia, Vilmos, Vilma
+REM Jan 11 MSG Névnapok: Ágota, Honoráta
+REM Jan 12 MSG Névnapok: Ernő, Erneszta, Tatjána
+REM Jan 13 MSG Névnapok: Veronika, Csongor, Yvett
+REM Jan 14 MSG Névnapok: Bódog, Félix
+REM Jan 15 MSG Névnapok: Lóránt, Loránd, Pál
+REM Jan 16 MSG Névnapok: Gusztáv, Marcell
+REM Jan 17 MSG Névnapok: Antal, Antónia
+REM Jan 18 MSG Névnapok: Margit, Piroska
+REM Jan 19 MSG Névnapok: Sára, Márta, Márió
+REM Jan 20 MSG Névnapok: Fábián, Sebestyén
+REM Jan 21 MSG Névnapok: Ágnes, Agnéta
+REM Jan 22 MSG Névnapok: Vince, Artúr
+REM Jan 23 MSG Névnapok: Zelma, Rajmund, Emerencia, Emese
+REM Jan 24 MSG Névnapok: Timót, Ferenc
+REM Jan 25 MSG Névnapok: Pál, Henrik
+REM Jan 26 MSG Névnapok: Vanda, Paula, Timóteusz
+REM Jan 27 MSG Névnapok: Angéla, Angelika
+REM Jan 28 MSG Névnapok: Károly, Karola, Tamás
+REM Jan 29 MSG Névnapok: Adél, Valér
+REM Jan 30 MSG Névnapok: Martina, Gerda, Jácinta
+REM Jan 31 MSG Névnapok: Marcella, János
+REM Feb 01 MSG Névnapok: Ignác, Brigitta, Kincső,Renátó
+REM Feb 02 MSG Névnapok: Karolina, Karola, Aida
+REM Feb 03 MSG Névnapok: Balázs, Oszkár, Celerina
+REM Feb 04 MSG Névnapok: Ráhel, Csenge, Veronika, András
+REM Feb 05 MSG Névnapok: Ágota, Ingrid, Etelka, Léda
+REM Feb 06 MSG Névnapok: Dorottya, Dóra, Pál
+REM Feb 07 MSG Névnapok: Tódor, Rómeó, Richárd
+REM Feb 08 MSG Névnapok: Aranka, Jeromos
+REM Feb 09 MSG Névnapok: Abigél, Alex, Apollónia
+REM Feb 10 MSG Névnapok: Elvira
+REM Feb 11 MSG Névnapok: Bertold, Marietta
+REM Feb 12 MSG Névnapok: Lívia, Lídia, Eulália
+REM Feb 13 MSG Névnapok: Ella, Linda, Levente, Katalin
+REM Feb 14 MSG Névnapok: Bálint, Valentin, Cirill, Metód
+REM Feb 15 MSG Névnapok: Kolos, Györgyi, Georgina
+REM Feb 16 MSG Névnapok: Julianna, Lilla, Filippa
+REM Feb 17 MSG Névnapok: Donát
+REM Feb 18 MSG Névnapok: Bernadett, Simon, Zenkő
+REM Feb 19 MSG Névnapok: Zsuzsanna, Eliza, Konrád
+REM Feb 20 MSG Névnapok: Aladár, Álmos, Leó
+REM Feb 21 MSG Névnapok: Eleonóra, Zelmira, Péter
+REM Feb 22 MSG Névnapok: Gerzson, Margit, Zétény
+REM Feb 23 MSG Névnapok: Alfréd, Polikárp, Mirtill
+REM Feb 24 OMITFUNC isLeap SKIP MSG Névnapok: Mátyás, Jázmin
+REM Feb 25 OMITFUNC isLeap SKIP MSG Névnapok: Géza, Cézár, Vanda
+REM Feb 26 OMITFUNC isLeap SKIP MSG Névnapok: Viktor, Győző
+REM Feb 27 OMITFUNC isLeap SKIP MSG Névnapok: Ákos, Bátor, Gábor,Edina
+REM Feb 28 OMITFUNC isLeap SKIP MSG Névnapok: Elemér, Oszvald, Román
+REM Feb 24 OMITFUNC !isLeap SKIP MSG Névnapok: Szökőnap
+REM Feb 25 OMITFUNC !isLeap SKIP MSG Névnapok: Mátyás, Jázmin
+REM Feb 26 OMITFUNC !isLeap SKIP MSG Névnapok: Géza, Cézár, Vanda
+REM Feb 27 OMITFUNC !isLeap SKIP MSG Névnapok: Viktor, Győző
+REM Feb 28 OMITFUNC !isLeap SKIP MSG Névnapok: Ákos, Bátor, Gábor,Edina
+REM Feb 29 OMITFUNC !isLeap SKIP MSG Névnapok: Elemér, Oszvald, Román
+REM Mar 01 MSG Névnapok: Albin, Albina, Leonita,
+REM Mar 02 MSG Névnapok: Lujza, Ágnes, Henrik, Magor
+REM Mar 03 MSG Névnapok: Kornélia, Kunigunda, Frigyes
+REM Mar 04 MSG Névnapok: Kázmér, Lúciusz, Zorán
+REM Mar 05 MSG Névnapok: Adorján, Adrián
+REM Mar 06 MSG Névnapok: Leonóra, Inez, Koletta
+REM Mar 07 MSG Névnapok: Tamás, Perpétua, Felicitász
+REM Mar 08 MSG Névnapok: János, Zoltán, Apolka
+REM Mar 09 MSG Névnapok: Franciska, Fanni
+REM Mar 10 MSG Névnapok: Ildikó, Emil, Gusztáv
+REM Mar 11 MSG Névnapok: Szilárd, Tímea, Konstantin
+REM Mar 12 MSG Névnapok: Gergely, Maximilián
+REM Mar 13 MSG Névnapok: Krisztián, Ajtony, Egyed, Patrícia
+REM Mar 14 MSG Névnapok: Matild, Matilda, Trilla
+REM Mar 15 MSG Névnapok: Kristóf, Kelemen
+REM Mar 16 MSG Névnapok: Henrietta, Herbert
+REM Mar 17 MSG Névnapok: Gertrúd, Patrik
+REM Mar 18 MSG Névnapok: Sándor, Ede, Cirill
+REM Mar 19 MSG Névnapok: József, Bánk
+REM Mar 20 MSG Névnapok: Klaudia, Alexandra
+REM Mar 21 MSG Névnapok: Benedek, Bence, Miklós
+REM Mar 22 MSG Névnapok: Beáta, Izolda, Lea
+REM Mar 23 MSG Névnapok: Emőke, Botond, Ottó, Kartal
+REM Mar 24 MSG Névnapok: Gábor, Karina
+REM Mar 25 MSG Névnapok: Irén, Írisz, Lúcia
+REM Mar 26 MSG Névnapok: Emánuel, Emánuéla, Lara, Larissza, Árpád
+REM Mar 27 MSG Névnapok: Hajnalka, Lídia, Auguszta
+REM Mar 28 MSG Névnapok: Gedeon, Johanna
+REM Mar 29 MSG Névnapok: Auguszta, Bertold
+REM Mar 30 MSG Névnapok: Zalán
+REM Mar 31 MSG Névnapok: Árpád, Benjámin, Benő
+REM Apr 01 MSG Névnapok: Hugó, Agád
+REM Apr 02 MSG Névnapok: Áron, Ferenc
+REM Apr 03 MSG Névnapok: Buda, Richárd, Hóvirág, Indira
+REM Apr 04 MSG Névnapok: Izidor
+REM Apr 05 MSG Névnapok: Vince, Irén, Teodóra
+REM Apr 06 MSG Névnapok: Vilmos, Bíborka, Taksony, Celesztin
+REM Apr 07 MSG Névnapok: Herman, János
+REM Apr 08 MSG Névnapok: Dénes, Valér, Valter
+REM Apr 09 MSG Névnapok: Erhard, Ákos, Döme
+REM Apr 10 MSG Névnapok: Zsolt, Ezékiel
+REM Apr 11 MSG Névnapok: Leó, Szaniszló, Glória
+REM Apr 12 MSG Névnapok: Gyula, Baldvin, Sába, Nara
+REM Apr 13 MSG Névnapok: Ida, Márton, Hermina
+REM Apr 14 MSG Névnapok: Tibor
+REM Apr 15 MSG Névnapok: Anasztázia, Tas, Oktávia
+REM Apr 16 MSG Névnapok: Csongor, Bernadett
+REM Apr 17 MSG Névnapok: Rudolf, Izidóra
+REM Apr 18 MSG Névnapok: Andrea, Ilma, Apolló, Aladár
+REM Apr 19 MSG Névnapok: Emma, Malvin, Zseraldina
+REM Apr 20 MSG Névnapok: Tivadar, Tihamér, Töhötöm
+REM Apr 21 MSG Névnapok: Konrád, Zelmira, Anzelm
+REM Apr 22 MSG Névnapok: Csilla, Noémi, Kájusz, Noé
+REM Apr 23 MSG Névnapok: Béla, Adalbert
+REM Apr 24 MSG Névnapok: György, Fidél, Debóra
+REM Apr 25 MSG Névnapok: Márk, Ányos, Mohamed
+REM Apr 26 MSG Névnapok: Ervin, Klétusz
+REM Apr 27 MSG Névnapok: Zita, Mariann, Anasztáz
+REM Apr 28 MSG Névnapok: Valéria, Péter
+REM Apr 29 MSG Névnapok: Péter, Katalin, Roberta
+REM Apr 30 MSG Névnapok: Katalin, Kitti, Zsófia, Piusz
+REM May 01 MSG Névnapok: Fülöp, Jakab, Zsaklin, Jefte, József, Valburga
+REM May 02 MSG Névnapok: Zsigmond, Idir, Zoé
+REM May 03 MSG Névnapok: Tímea, Irma, Jakab, Fülöp
+REM May 04 MSG Névnapok: Mónika, Flórián
+REM May 05 MSG Névnapok: Györgyi, Irén
+REM May 06 MSG Névnapok: Ivett, Frida, Judit, Yvett
+REM May 07 MSG Névnapok: Gizella, Gusztáv, Bendegúz, Gália
+REM May 08 MSG Névnapok: Mihály, Győző
+REM May 09 MSG Névnapok: Gergely, Katinka, Alberta, Édua
+REM May 10 MSG Névnapok: Ármin, Pálma, Izidor
+REM May 11 MSG Névnapok: Ferenc, Sára
+REM May 12 MSG Névnapok: Pongrác
+REM May 13 MSG Névnapok: Szervác, Imola, Imelda
+REM May 14 MSG Névnapok: Bonifác, Gyöngyi
+REM May 15 MSG Névnapok: Zsófia, Szonja, Döníz
+REM May 16 MSG Névnapok: Mózes, Botond, János
+REM May 17 MSG Névnapok: Paszkál, Ditmár, Rezeda
+REM May 18 MSG Névnapok: Erik, Alexandra, János
+REM May 19 MSG Névnapok: Ivó, Iván, Milán
+REM May 20 MSG Névnapok: Bernát, Bernardin, Felícia
+REM May 21 MSG Névnapok: Konstantin, András
+REM May 22 MSG Névnapok: Júlia, Rita, Emil
+REM May 23 MSG Névnapok: Dezső, Vilmos, Renáta
+REM May 24 MSG Névnapok: Eszter, Eliza, Vanessza
+REM May 25 MSG Névnapok: Orbán, Gergely
+REM May 26 MSG Névnapok: Fülöp, Evelin
+REM May 27 MSG Névnapok: Hella, Pelbárt, Ágoston
+REM May 28 MSG Névnapok: Emil, Csanád, Vilmos
+REM May 29 MSG Névnapok: Magdolna, Magda, Ervin, Léna
+REM May 30 MSG Névnapok: Janka, Zsanett, Johanna, Nándor
+REM May 31 MSG Névnapok: Angéla, Petronella
+REM Jun 01 MSG Névnapok: Tünde, Jusztinusz
+REM Jun 02 MSG Névnapok: Kármen, Anita, Péter, Marcellinusz
+REM Jun 03 MSG Névnapok: Klotild, Cecília, Károly, Kevin
+REM Jun 04 MSG Névnapok: Bulcsú, Kerény, Kerubin
+REM Jun 05 MSG Névnapok: Frézia,Zenke Fatime, Fatima, Bonifác
+REM Jun 06 MSG Névnapok: Norbert, Norberta, Cintia
+REM Jun 07 MSG Névnapok: Róbert, Robertina, Arianna, Fülöp, Roberta
+REM Jun 08 MSG Névnapok: Medárd, Helga
+REM Jun 09 MSG Névnapok: Félix, Előd, Annamária, Annabella
+REM Jun 10 MSG Névnapok: Margit
+REM Jun 11 MSG Névnapok: Barnabás, Barangó
+REM Jun 12 MSG Névnapok: Villő, Orfeusz, Adelaida
+REM Jun 13 MSG Névnapok: Antal, Anett
+REM Jun 14 MSG Névnapok: Vazul, Elizeus, Herta
+REM Jun 15 MSG Névnapok: Jolán, Vid, Viola, Ariana
+REM Jun 16 MSG Névnapok: Jusztin, Jusztina, Auréliusz
+REM Jun 17 MSG Névnapok: Laura, Alida, Alina, Szabolcs, Adolf, Bató
+REM Jun 18 MSG Névnapok: Arnold, Levente, Doloróza
+REM Jun 19 MSG Névnapok: Gyárfás, Romuald, Azurea
+REM Jun 20 MSG Névnapok: Rafael, Dina
+REM Jun 21 MSG Névnapok: Alajos, Leila
+REM Jun 22 MSG Névnapok: Paulina, Tamás
+REM Jun 23 MSG Névnapok: Zoltán, Szultána
+REM Jun 24 MSG Névnapok: János, Iván
+REM Jun 25 MSG Névnapok: Vilmos, Viola, Vilma
+REM Jun 26 MSG Névnapok: János, Pál, Cirill
+REM Jun 27 MSG Névnapok: László, Sámson
+REM Jun 28 MSG Névnapok: Levente, Irén, Iréneusz
+REM Jun 29 MSG Névnapok: Péter, Pál, Emőke, Judit, Petra, Szulamit, Ivett
+REM Jun 30 MSG Névnapok: Pál
+REM Jul 01 MSG Névnapok: Tihamér, Annamária, Olivér, Áron
+REM Jul 02 MSG Névnapok: Ottó
+REM Jul 03 MSG Névnapok: Kornél, Soma, Tamás
+REM Jul 04 MSG Névnapok: Ulrik, Erzsébet
+REM Jul 05 MSG Névnapok: Emese, Sarolta, Lotti, Antal, Nara
+REM Jul 06 MSG Névnapok: Csaba, Mária
+REM Jul 07 MSG Névnapok: Apollónia, Vilibald, Bene
+REM Jul 08 MSG Névnapok: Ellák, Edgár, Eperke, Zsóka
+REM Jul 09 MSG Névnapok: Lukrécia, Veronika, Hajnalka
+REM Jul 10 MSG Névnapok: Amália, Melina Engelbert, Ulrika
+REM Jul 11 MSG Névnapok: Nóra, Lili, Nelli, Benedek
+REM Jul 12 MSG Névnapok: Izabella, Dalma, Eleonóra
+REM Jul 13 MSG Névnapok: Jenő, Henrik
+REM Jul 14 MSG Névnapok: Örs, Stella, Kamil
+REM Jul 15 MSG Névnapok: Örkény, Henrik, Roland, Bonaventúra, Csegő
+REM Jul 16 MSG Névnapok: Valter, Irma
+REM Jul 17 MSG Névnapok: Endre, Elek, András
+REM Jul 18 MSG Névnapok: Szömér, Frigyes, Milla, Hedvig, Mirkó
+REM Jul 19 MSG Névnapok: Emília
+REM Jul 20 MSG Névnapok: Illés, Margaréta
+REM Jul 21 MSG Névnapok: Dániel, Daniella, Lőrinc
+REM Jul 22 MSG Névnapok: Magdolna, Mária, Magda, Nara
+REM Jul 23 MSG Névnapok: Lenke, Brigitta, Apollinár
+REM Jul 24 MSG Névnapok: Kinga, Kunigunda, Kincső, Krisztina
+REM Jul 25 MSG Névnapok: Kristóf, Jakab
+REM Jul 26 MSG Névnapok: PannaAnna, Anikó, Joakim
+REM Jul 27 MSG Névnapok: Olga, Liliána, Natália, Pantaleon
+REM Jul 28 MSG Névnapok: Szabolcs, Alina, Ince, Győző
+REM Jul 29 MSG Névnapok: Márta, Flóra
+REM Jul 30 MSG Névnapok: Judit, Xénia, Péter
+REM Jul 31 MSG Névnapok: Oszkár, Ignác, Bató
+REM Aug 01 MSG Névnapok: Boglárka, Nimród, Alfonz
+REM Aug 02 MSG Névnapok: Lehel
+REM Aug 03 MSG Névnapok: Hermina, Lídia, Kamélia, Kíra, Mirtill
+REM Aug 04 MSG Névnapok: Domonkos, Dominik, János, Dominika
+REM Aug 05 MSG Névnapok: Krisztina
+REM Aug 06 MSG Névnapok: Berta, Bettina
+REM Aug 07 MSG Névnapok: Ibolya
+REM Aug 08 MSG Névnapok: László, Domonkos
+REM Aug 09 MSG Névnapok: Emőd, Román
+REM Aug 10 MSG Névnapok: Lőrinc, Blanka, Csilla
+REM Aug 11 MSG Névnapok: Zsuzsanna, Tiborc, Klára
+REM Aug 12 MSG Névnapok: Klára, Hilária, Diána
+REM Aug 13 MSG Névnapok: Ipoly, Ince, Vitália
+REM Aug 14 MSG Névnapok: Marcell, Maximilián
+REM Aug 15 MSG Névnapok: Mária
+REM Aug 16 MSG Névnapok: Ábrahám, Rókus
+REM Aug 17 MSG Névnapok: Jácint, Réka, Hetény
+REM Aug 18 MSG Névnapok: Ilona, Rajnald
+REM Aug 19 MSG Névnapok: Huba, Marián, Emília
+REM Aug 20 MSG Névnapok: István, Bernát
+REM Aug 21 MSG Névnapok: Sámuel, Hajna, Piusz
+REM Aug 22 MSG Névnapok: Menyhért, Mirjam
+REM Aug 23 MSG Névnapok: Bence, Róza, Szidónia
+REM Aug 24 MSG Névnapok: Bertalan, Aliz, Detre
+REM Aug 25 MSG Névnapok: Lajos, Patrícia
+REM Aug 26 MSG Névnapok: Izsó, Tália, Natália, Zamfira
+REM Aug 27 MSG Névnapok: Gáspár, Mónika
+REM Aug 28 MSG Névnapok: Ágoston, Mózes
+REM Aug 29 MSG Névnapok: Beatrix, Erna
+REM Aug 30 MSG Névnapok: Rózsa, Félix, Letícia
+REM Aug 31 MSG Névnapok: Erika, Bella, Arisztid
+REM Sep 01 MSG Névnapok: Egyed, Egon, Noémi, Tamara
+REM Sep 02 MSG Névnapok: Rebeka, Dorina, Renáta, Ingrid, István, Axel
+REM Sep 03 MSG Névnapok: Hilda, Gergely
+REM Sep 04 MSG Névnapok: Rozália, Róza, Ida
+REM Sep 05 MSG Névnapok: Viktor, Lőrinc, Ofélia
+REM Sep 06 MSG Névnapok: Zakariás, Beáta, Brájen
+REM Sep 07 MSG Névnapok: Regina
+REM Sep 08 MSG Névnapok: Mária, Adrienn
+REM Sep 09 MSG Névnapok: Ádám, Péter
+REM Sep 10 MSG Névnapok: Nikolett, Hunor, Miklós
+REM Sep 11 MSG Névnapok: Teodóra, Jácint, Igor, Helga
+REM Sep 12 MSG Névnapok: Mária, Irma
+REM Sep 13 MSG Névnapok: Kornél, János
+REM Sep 14 MSG Névnapok: Szeréna, Roxána
+REM Sep 15 MSG Névnapok: Enikő, Melitta
+REM Sep 16 MSG Névnapok: Edit, Ciprián
+REM Sep 17 MSG Névnapok: Zsófia, Róbert
+REM Sep 18 MSG Névnapok: Diána, József
+REM Sep 19 MSG Névnapok: Vilhelmina, Januáriusz, Dorián
+REM Sep 20 MSG Névnapok: Friderika
+REM Sep 21 MSG Névnapok: Máté, Mirella, Jónás
+REM Sep 22 MSG Névnapok: Móric, Tamás
+REM Sep 23 MSG Névnapok: Tekla, Líviusz, Ila, Nara
+REM Sep 24 MSG Névnapok: Gellért, Gerda, Mercédesz
+REM Sep 25 MSG Névnapok: Eufrozina, Kende
+REM Sep 26 MSG Névnapok: Jusztina, Kozma, Damján
+REM Sep 27 MSG Névnapok: Adalbert, Vince
+REM Sep 28 MSG Névnapok: Vencel, Salamon
+REM Sep 29 MSG Névnapok: Mihály, Gábor, Rafael Mirabella
+REM Sep 30 MSG Névnapok: Jeromos, Honória, Hunor
+REM Oct 01 MSG Névnapok: Malvin, Teréz
+REM Oct 02 MSG Névnapok: Petra, Örs
+REM Oct 03 MSG Névnapok: Helga, Évald
+REM Oct 04 MSG Névnapok: Ferenc, Hajnalka
+REM Oct 05 MSG Névnapok: Aurél, Placid, Attila
+REM Oct 06 MSG Névnapok: Brúnó, Renáta, Renátó
+REM Oct 07 MSG Névnapok: Amália, Bekény
+REM Oct 08 MSG Névnapok: Koppány, Benedikta
+REM Oct 09 MSG Névnapok: Dénes, János
+REM Oct 10 MSG Névnapok: Gedeon, Ferenc, Bendegúz
+REM Oct 11 MSG Névnapok: Brigitta, Placida, Etel, Gitta
+REM Oct 12 MSG Névnapok: Miksa, Rezső, Edvin
+REM Oct 13 MSG Névnapok: Kálmán, Ede, Edvárd
+REM Oct 14 MSG Névnapok: Helén, Kaldixtusz
+REM Oct 15 MSG Névnapok: Teréz, Aranka
+REM Oct 16 MSG Névnapok: Gál, Margit, Hedvig
+REM Oct 17 MSG Névnapok: Hedvig, Ignác, Rudolf
+REM Oct 18 MSG Névnapok: Lukács, Jusztusz
+REM Oct 19 MSG Névnapok: Nándor, János, Pál
+REM Oct 20 MSG Névnapok: Vendel, Irén, Kleopátra
+REM Oct 21 MSG Névnapok: Orsolya, Zsolt
+REM Oct 22 MSG Névnapok: Előd, Szalóme, Kordélia
+REM Oct 23 MSG Névnapok: Gyöngyvér, János, Gyöngyi
+REM Oct 24 MSG Névnapok: Salamon, Antal
+REM Oct 25 MSG Névnapok: Blanka, Bianka, Beniel,Mór
+REM Oct 26 MSG Névnapok: Dömötör, Armand, Örs
+REM Oct 27 MSG Névnapok: Szabina, Antonietta
+REM Oct 28 MSG Névnapok: Simon, Szimonetta, Szimóna, Júdás, Tádé
+REM Oct 29 MSG Névnapok: Nárcisz, Melinda, Őzike
+REM Oct 30 MSG Névnapok: Alfonz, Zenóbia
+REM Oct 31 MSG Névnapok: Farkas, Rodrigó, Wolfgang
+REM Nov 01 MSG Névnapok: Marianna
+REM Nov 02 MSG Névnapok: Achilles, Bató
+REM Nov 03 MSG Névnapok: Győző, Márton
+REM Nov 04 MSG Névnapok: Károly, Karola
+REM Nov 05 MSG Névnapok: Imre, Zakariás, Tétény
+REM Nov 06 MSG Névnapok: Lénárd
+REM Nov 07 MSG Névnapok: Csenger, Rezső, Ernő, Florentin
+REM Nov 08 MSG Névnapok: Zsombor, Kolos, Gottfrid
+REM Nov 09 MSG Névnapok: Tivadar
+REM Nov 10 MSG Névnapok: Réka, András, Leó
+REM Nov 11 MSG Névnapok: Márton, Atád, Tódor
+REM Nov 12 MSG Névnapok: Jónás, Renátó, Jozafát
+REM Nov 13 MSG Névnapok: Szilvia, Szaniszló
+REM Nov 14 MSG Névnapok: Aliz, Vanda, Huba, Klementina
+REM Nov 15 MSG Névnapok: Albert, Lipót
+REM Nov 16 MSG Névnapok: Ödön, Margit
+REM Nov 17 MSG Névnapok: Hortenzia, Gergő, Dénes
+REM Nov 18 MSG Névnapok: Jenő, Noé
+REM Nov 19 MSG Névnapok: Erzsébet
+REM Nov 20 MSG Névnapok: Jolán, Zsolt, Ödön, Bódog
+REM Nov 21 MSG Névnapok: Olivér
+REM Nov 22 MSG Névnapok: Cecília, Filemon
+REM Nov 23 MSG Névnapok: Kelemen, Klementina, Kolumbán
+REM Nov 24 MSG Névnapok: Emma, Flóra, Virág, Emmaróza
+REM Nov 25 MSG Névnapok: Katalin, Liza, Katinka
+REM Nov 26 MSG Névnapok: Virág, Szvetlana, Konrád, Viktória, Milos
+REM Nov 27 MSG Névnapok: Virgil, Virgínia
+REM Nov 28 MSG Névnapok: Stefánia, Jakab
+REM Nov 29 MSG Névnapok: Taksony, Ilma, Filoména
+REM Nov 30 MSG Névnapok: András, Andor, Andrea
+REM Dec 01 MSG Névnapok: Elza, Natália, Blanka, Bonita
+REM Dec 02 MSG Névnapok: Melinda, Vivien, Aranka
+REM Dec 03 MSG Névnapok: Ferenc, Olívia
+REM Dec 04 MSG Névnapok: Borbála, Barbara, János
+REM Dec 05 MSG Névnapok: Vilma, Ünige, Csaba
+REM Dec 06 MSG Névnapok: Miklós, Csinszka, Gyopár, Gyopárka
+REM Dec 07 MSG Névnapok: Ambrus, Ambrózia
+REM Dec 08 MSG Névnapok: Mária, Emőke
+REM Dec 09 MSG Névnapok: Natália, Valéria, Filótea
+REM Dec 10 MSG Névnapok: Judit, Loretta, Eulália
+REM Dec 11 MSG Névnapok: Árpád, Árpádina, Damazusz
+REM Dec 12 MSG Névnapok: Gabriella, Johanna, Franciska
+REM Dec 13 MSG Névnapok: Luca, Otília, Lúcia, Éda, Tilia
+REM Dec 14 MSG Névnapok: Szilárda, Szilárd, János
+REM Dec 15 MSG Névnapok: Valér, Detre
+REM Dec 16 MSG Névnapok: Etelka, Aletta, Adelaida
+REM Dec 17 MSG Névnapok: Lázár, Olimpia
+REM Dec 18 MSG Névnapok: Auguszta, Gracián
+REM Dec 19 MSG Névnapok: Viola, Anasztáz
+REM Dec 20 MSG Névnapok: Teofil, Liberátusz
+REM Dec 21 MSG Névnapok: Tamás, Péter
+REM Dec 22 MSG Névnapok: Zénó, Flórián
+REM Dec 23 MSG Névnapok: Viktória, János
+REM Dec 24 MSG Névnapok: Ádám, Éva, Adél, Noé
+REM Dec 25 MSG Névnapok: Eugénia, Anasztázia
+REM Dec 26 MSG Névnapok: István
+REM Dec 27 MSG Névnapok: János, Teodor
+REM Dec 28 MSG Névnapok: Kamilla, Apor
+REM Dec 29 MSG Névnapok: Tamás, Tamara
+REM Dec 30 MSG Névnapok: Dávid, Hunor, Libériusz
+REM Dec 31 MSG Névnapok: Szilveszter, Donáta
