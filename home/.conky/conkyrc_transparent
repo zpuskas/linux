@@ -44,7 +44,7 @@ ${battery_bar 4,107 BAT0} ${alignr}${battery_bar 4,107 BAT1}
 Remaining time: ${alignr}${if_empty ${battery_time}}AC ${acpiacadapter}${else}${battery_time}${endif}
 Uptime: $alignr$uptime
 Sytem temp: ${alignr}${acpitemp}${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
-CPU temp: ${alignr}${hwmon 2 temp 1}${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
+CPU temp: ${alignr}${hwmon 6 temp 1}${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
 #Fan: ${alignr}${hwmon 1 fan 1} RPM
 Processes: ${alignr}$processes ($running_processes running)
 Load: ${alignr}$loadavg
@@ -79,34 +79,39 @@ ${top_mem name 4}$alignr${top_mem cpu 4}${top_mem mem 4}
 SSD: ${alignr}${fs_used /} / ${fs_size /}
 ${fs_bar 4 /}
 IO-R: ${diskio_read} ${alignr}IO-W: ${diskio_write}
-${diskiograph_read 15,107} ${alignr}${diskiograph_write 15,107}
+${diskiograph_read 15,107 CDE0E7 CDE0E7} ${alignr}${diskiograph_write 15,107 CDE0E7 CDE0E7}
 TMP: ${alignr}${fs_used /tmp} / ${fs_size /tmp}
 ${fs_bar 4 /tmp}
 ${if_existing /sys/class/net/eth0/operstate up}
 enp0s31f6: ${addr eth0}
 Down ${downspeed eth0}/s ${alignr}Up ${upspeed eth0}/s
-${downspeedgraph eth0 15,107} ${alignr}${upspeedgraph eth0 15,107}
+${downspeedgraph eth0 15,107 CDE0E7 CDE0E7} ${alignr}${upspeedgraph eth0 15,107 CDE0E7 CDE0E7}
 Total ${totaldown eth0} ${alignr}Total ${totalup eth0}
 ${endif}${if_existing /sys/class/net/enp14s0u1/operstate up}
-enp0s31f6: ${addr enp14s0u1}
+ETH (dock): ${addr enp14s0u1}
 Down ${downspeed enp14s0u1}/s ${alignr}Up ${upspeed enp14s0u1}/s
-${downspeedgraph enp14s0u1 15,107} ${alignr}${upspeedgraph enp14s0u1 15,107}
+${downspeedgraph enp14s0u1 15,107 CDE0E7 CDE0E7} ${alignr}${upspeedgraph enp14s0u1 15,107 CDE0E7 CDE0E7}
 Total ${totaldown enp14s0u1} ${alignr}Total ${totalup enp14s0u1}
 ${endif}${if_existing /sys/class/net/enp0s31f6/operstate up}
-enp0s31f6: ${addr enp0s31f6}
+ETH: ${addr enp0s31f6}
 Down ${downspeed enp0s31f6}/s ${alignr}Up ${upspeed enp0s31f6}/s
-${downspeedgraph enp0s31f6 15,107} ${alignr}${upspeedgraph enp0s31f6 15,107}
+${downspeedgraph enp0s31f6 15,107 CDE0E7 CDE0E7} ${alignr}${upspeedgraph enp0s31f6 15,107 CDE0E7 CDE0E7}
 Total ${totaldown enp0s31f6} ${alignr}Total ${totalup enp0s31f6}
 ${endif}${if_existing /sys/class/net/enp11s0u1/operstate up}
-enp11s0u1: ${addr enp11s0u1}
+ETH (dock): ${addr enp11s0u1}
 Down ${downspeed enp11s0u1}/s ${alignr}Up ${upspeed enp11s0u1}/s
-${downspeedgraph enp11s0u1 15,107} ${alignr}${upspeedgraph enp11s0u1 15,107}
+${downspeedgraph enp11s0u1 15,107 CDE0E7 CDE0E7} ${alignr}${upspeedgraph enp11s0u1 15,107 CDE0E7 CDE0E7}
 Total ${totaldown enp11s0u1} ${alignr}Total ${totalup enp11s0u1}
+${endif}${if_existing /sys/class/net/enp15s0/operstate up}
+ETH (mlx): ${addr enp15s0}
+Down ${downspeed enp15s0}/s ${alignr}Up ${upspeed enp15s0}/s
+${downspeedgraph enp15s0 15,107 CDE0E7 CDE0E7} ${alignr}${upspeedgraph enp15s0 15,107 CDE0E7 CDE0E7}
+Total ${totaldown enp15s0} ${alignr}Total ${totalup enp15s0}
 ${endif}${if_existing /sys/class/net/wlp3s0/operstate up}
-wlp3s0: ${addr wlp3s0}
+WiFi: ${addr wlp3s0}
 Signal: ${alignr}${wireless_link_qual wlp3s0}%
 Down ${downspeed wlp3s0}/s ${alignr}Up ${upspeed wlp3s0}/s
-${downspeedgraph wlp3s0 15,107} ${alignr}${upspeedgraph wlp3s0 15,107}
+${downspeedgraph wlp3s0 15,107 CDE0E7 CDE0E7} ${alignr}${upspeedgraph wlp3s0 15,107 CDE0E7 CDE0E7}
 Total ${totaldown wlp3s0} ${alignr}Total ${totalup wlp3s0}
 ${endif}
 ]]
