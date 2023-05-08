@@ -9,7 +9,6 @@ import send2trash
 import sys
 
 COMP_IMAGE_EXT = ".JPG"
-RAW_IMAGE_EXT = ".DNG"
 
 
 @click.command()
@@ -25,8 +24,13 @@ RAW_IMAGE_EXT = ".DNG"
 @click.option("--trash", "-t",
               is_flag=True,
               help="Move files to trash instead of printing to terminal")
-def raw_clean(delete, invert, raw_dir, trash):
+@click.option("--raw-ext", "-x",
+              type=click.Choice(['DNG', 'RAF'], case_sensitive=False),
+              default="DNG",
+              help="RAW file extension type")
+def raw_clean(delete, invert, raw_dir, trash, raw_ext):
     """Clean up RAW files without matching JPG files in current directory"""
+    raw_image_ext = f".{raw_ext.upper()}"
 
     # Basic user input check
     if not os.path.exists(raw_dir):
@@ -43,7 +47,7 @@ def raw_clean(delete, invert, raw_dir, trash):
     )
     raws = set(
         [f.split('.')[0]
-         for f in os.listdir(raw_dir) if f.endswith(RAW_IMAGE_EXT)]
+         for f in os.listdir(raw_dir) if f.endswith(raw_image_ext)]
     )
 
     # Find missing pairs
@@ -55,7 +59,7 @@ def raw_clean(delete, invert, raw_dir, trash):
     if not invert:
         images = raws_without_jpg
         workdir = raw_dir
-        ext = RAW_IMAGE_EXT
+        ext = raw_image_ext
     else:
         images = jpgs_without_raw
         workdir = image_dir
