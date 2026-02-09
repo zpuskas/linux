@@ -1,3 +1,7 @@
+**NOTICE: This project has been migrated to [Codeberg](https://codeberg.org/zpuskas/linux)!
+This repository has been archived, will receive no further updates, and will be deleted
+on 2026-09-01!**
+
 linux
 =====
 
